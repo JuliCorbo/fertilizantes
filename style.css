@@ -1,0 +1,19 @@
+body{
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h1{
+    text-align: center;
+}
+
+.img{
+    width: 15%;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container div{
+    text-align: center;
+}
