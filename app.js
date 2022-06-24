@@ -2,8 +2,8 @@ let saludo = "bienvenido a la tienda virtual de vivero pimpaji!"
 alert (saludo)
 
 
-
-class itemfloracion {
+//objeto de productos con constructor
+class items {
     constructor (nombre, precio){
         this.nombre= nombre;
         this.precio= precio;
@@ -12,8 +12,13 @@ class itemfloracion {
 
 const productos = [];
 
-productos.push(new itemfloracion("floracion",500));
+//productos pusheados
+productos.push(new items("floracion",500));
+productos.push(new items("fertilizante", 650));
+productos.push(new items("hormonal", 550));
 
+
+//DOM del item floracion y su funcion
 let pedidoFloracion = document.getElementById("floracion")
 pedidoFloracion.addEventListener("submit",agregar)
 
@@ -25,7 +30,7 @@ function agregar (e){
     console.log (floracion.children[0].value)
     console.log (floracion.children[1].value)
 
-    let precio = Number(500)
+    let precio = Number(550)
     let nombre = "Floracion"
 
     let cantidad = floracion.children[0].value;
@@ -35,6 +40,8 @@ function agregar (e){
 
 }
 
+
+// evento del item Foracion
 function mostrarResultado(parametro1,parametro2,parametro3){
     let divFloracion = document.createElement("div")
     floracion.innerHTML = `<h3> usted agrego ${parametro1} ${parametro3}. por un total de $ ${parametro2} `
@@ -42,15 +49,9 @@ function mostrarResultado(parametro1,parametro2,parametro3){
     document.body.append(divFloracion)
 }
 
-class itemFertilizante{
-    constructor(nombre, precio){
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-}
 
-productos.push(new itemFertilizante("fertilizante", 650));
 
+//DOM del item fertilizante y su funcion
 let pedidoFertilizante = document.getElementById("fertilizante")
 pedidoFertilizante.addEventListener("submit",agregarFertilizante)
 
@@ -58,22 +59,22 @@ function agregarFertilizante (e){
 
     e.preventDefault();
 
-    let pedidoFertilizante = e.target
+    let pedidoFertilizante = e.target // averiguar por que no se marco en azul
 
     console.log(fertilizante.children[0].value)
     console.log(fertilizante.children[1].value)
 
-    let precioFertilizante = Number(650)
+    let precio = Number(550)
     let nombreFertilizante = "Fertilizante"
 
     let cantidadFertilizante = fertilizante.children[0].value;
 
 
-    let precioTotalFertilizante = cantidadFertilizante * precioFertilizante
+    let precioTotalFertilizante = cantidadFertilizante * precio
     mostrarResultadoF(cantidadFertilizante, precioTotalFertilizante, nombreFertilizante)
 
 } 
-
+//evento del item fertilizante
 function mostrarResultadoF(parametro1, parametro2, parametro3){
 
     let divfertilizante = document.createElement("div")
@@ -82,17 +83,11 @@ function mostrarResultadoF(parametro1, parametro2, parametro3){
     document.body.append(divfertilizante)
 }
 
-class itemHormonal {
-    constructor(nombre, precio){
-        this.nombre = nombre;
-        this.precio = precio;
-    }
-}
 
-productos.push(new itemHormonal("hormonal", 550));
 
+//dom del item hormonal
 let pedidoHormonal = document.getElementById ("hormonal")
-pedidoHormonal.addEventListener("submit" , agregarHormonal)
+pedidoHormonal.addEventListener("submit",agregarHormonal)
 
 function agregarHormonal (e){
 
@@ -104,15 +99,16 @@ function agregarHormonal (e){
     console.log(hormonal.children[0].value)
     console.log(hormonal.children[1].value)
 
-    let precioHormonal = Number(550)
+    let precio = Number(550)
     let cantidadHormonal = hormonal.children[0].value
     let nombreHormonal = "hormonal"
 
-    let precioTotalHormonal = cantidadHormonal * precioHormonal
+    let precioTotalHormonal = cantidadHormonal * precio
 
     mostrarResultadoH(cantidadHormonal, precioTotalHormonal, nombreHormonal )
 }
 
+//evento del item hormonal
 function mostrarResultadoH (parametro1, parametro2, parametro3){
     let divhormonal = document.createElement("div")
     hormonal.innerHTML = `<h3> usted agrego ${parametro1} ${parametro3}. por un total de $ ${parametro2}</h3>`;

@@ -17,3 +17,13 @@ h1{
 .container div{
     text-align: center;
 }
+
+.btncompra{
+    margin-left: 45%;
+    margin-top: 6rem;
+   
+}
+
+.btncompra input {
+    background-color: green;
+}
